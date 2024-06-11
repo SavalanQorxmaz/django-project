@@ -1,0 +1,195 @@
+@use 'sass:math';
+
+$contact_top: calc(100% - 50px);
+$contact_right: calc(100% - 50px);
+header {
+
+    height: 80px;
+    width: 100%;
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        height: 80px;
+        width: 100%;
+        background: linear-gradient(to right, rgb(14, 14, 13), rgb(49, 49, 48));
+        box-shadow: 0px 5px 8px 0px rgba(243, 241, 241, 0.651); 
+        color: white;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            height: 100%;
+
+            img {
+                
+                width: 70px;
+                height: 70px;
+                margin: 0px 20px;
+                object-fit: cover;
+                border-radius: 50%;
+                
+            }
+            p {
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-size: 1.2rem;
+                font-style: italic;
+            }
+        }
+
+        #back-to-top {
+
+            position: fixed;
+            right: 20px;
+            cursor: pointer;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            border-radius: 50%;
+            opacity: 0.7;
+            z-index: 90;
+            color: rgb(238, 233, 233);
+            
+        }
+        .back-to-top-hide {
+            bottom: -50px;
+        }
+        .back-to-top-show {
+            bottom: 20px;
+
+        }
+    
+        #contacts-icon {
+            color: rgb(113, 124, 133);
+            position: fixed;
+            z-index: 99;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+           border-radius: 50%;
+            cursor: pointer;
+            transition: cubic-bezier(0.175, 0.885, 0.32, 1);
+            
+        transition-duration: 500ms;
+        }
+    
+        .contacts-icon-open {
+            top: $contact_top;
+            right: $contact_right;
+        }
+    
+        .contacts-icon-close {
+            top: 100px;
+            right: 20px;
+        }
+    
+        #analog {
+            position: fixed;
+            top: 5px;
+            right: 5px;
+            z-index: 99;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+        
+            #center {
+                position: absolute;
+                z-index: 9;
+                width: 4px;
+                height: 4px;
+                background-color: rgb(59, 6, 6);
+                border-radius: 50%;
+                translate: 33px 33px;
+            }
+            
+            #hour {
+                top: 0;
+                width: 4px;
+                height: 100%;
+                position: absolute;    
+                translate: 33px;
+            }
+            
+            #hour :first-child {
+                position: absolute;
+                width: 100%;
+                height: 50%;
+                border-radius: 50% 50% 1px 1px;
+                top: 5px;
+                background-color: rgb(6, 70, 31);
+            
+            }
+            
+            #minute {
+                top: 0;
+                width: 2px;
+                height: 100%;
+                position: absolute;    
+                translate: 34px;
+            }
+            
+            #minute :first-child {
+                position: absolute;
+                width: 100%;
+                height: 55%;
+                top: 5px;
+                /* border: 1px solid black; */
+                border-radius: 50% 50% 1px 1px;
+                background-color: rgb(5, 56, 122);
+            
+            }
+            
+            
+            #second {
+                top: 0;
+                width: 2px;
+                height: 100%;
+                position: absolute;    
+                translate: 34px;
+            }
+            
+            #second :first-child {
+                position: relative;
+                width: 100%;
+                height: 60%;
+                top: 5px;
+                /* border: 1px solid rgb(117, 13, 13); */
+                background-color: rgb(240, 236, 6);
+            
+            }
+            
+            .line {
+                top: 0;
+                width: 4px;
+                height: 100%;
+                position: absolute;    
+                translate: 33px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            
+            .long-line {
+                top: 0;
+                width: 3px;
+                height: 5%;
+              background-color: rgb(47, 143, 84);
+            }
+            
+            .short-line {
+                top: 0;
+                width: 2px;
+                height: 3%;
+              background-color: rgb(106, 147, 201);
+            }
+            
+        
+        }
+        
+    }
+}

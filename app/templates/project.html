@@ -1,0 +1,33 @@
+{% extends 'master.html' %}
+
+{% block title %}
+project
+ {% endblock %}
+
+ {% block main%}
+
+
+ <div class="project-details">
+  <h1 class="to-back"><a href="/">  &#x1F844;</a></h1>
+  <div>
+    {{project.id}}
+    
+</div>
+<div>
+    {{project.Description}}
+</div>
+<ul class="project-photos">
+    {% for x in photos %}
+      <li class="">
+       <p> {{ x.project_name }} {{ x.project_text }}</p>
+       <img src="data:;base64,{{x.photo|safe }}"  alt="">
+
+      
+       
+     </li>
+    {% endfor %}
+  </ul>
+ </div>
+
+ {% endblock %}
+

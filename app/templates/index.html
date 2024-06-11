@@ -1,0 +1,54 @@
+{% extends 'master.html' %}
+
+{% block title %}
+Design
+ {% endblock %}
+
+ 
+
+
+ {% block main %}
+ 
+
+<div class="home">
+  
+
+  <div id="carousel" class="carousel" oncontextmenu="return false">
+    <div class="carousel-items">
+      {% for i in slider %}
+      <div class="carousel-item">
+        <div class="carousel-item-content">
+          <img src="data:;base64,{{i.slide|safe }}"  alt="">
+        </div>
+      </div>
+      {% endfor %}
+  
+    </div>
+    <div class="cover"></div>
+  </div>
+  
+ <section id="projects-section">
+  <div class ="container">
+      <ul class="projects">
+         {% for x in projects %}
+           <li class="project">
+            <p> {{ x.project_name }} {{ x.project_text }}</p>
+            <img src="data:;base64,{{x.project_image|safe }}"  alt="">
+
+            <a href="project/{{ x.id }}">&rarr;</a>
+           
+            
+          </li>
+         {% endfor %}
+       </ul>
+       
+   </div>
+ </section>
+ </div>
+</div>
+
+
+ 
+    {% endblock %}
+
+   

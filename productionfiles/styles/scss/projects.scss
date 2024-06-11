@@ -1,0 +1,23 @@
+
+.project-details {
+    width: 100%;
+    // overflow: hidden;
+
+    .to-back {
+       
+        a{
+            color: black;
+        }
+    }
+
+    .project-photos {
+        width: 100%;
+
+        li {
+            img {
+                max-width: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+}

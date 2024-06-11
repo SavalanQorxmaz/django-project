@@ -1,0 +1,133 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    
+ <link rel="stylesheet" href="{% static 'index.css' %}">
+ <link rel="stylesheet" href="{% static 'styles/css/app.css' %}">
+    {% block link %}
+     {% endblock%}
+</head>
+<body>
+ 
+    {% block header%}
+
+   
+
+    <header>
+   
+       <div class="header">
+   
+         <div class="logo">
+          <img src="data:;base64,{{logo.logo|safe }}"  alt="">
+           <p>{{logo.logo_title}}</p>
+         </div>
+   
+         <div id="back-to-top" class="back-to-top-hide">
+           &#129085;
+         </div>
+   
+   
+   
+         <div id="contacts-icon" class="contacts-icon-open">
+           &#9742;
+             </div>
+        
+        
+             <div id="analog">
+                 <div id="center"></div>
+                 <div id="hour">
+                     <div></div>
+                     <div></div>
+                 </div>
+                 <div id="minute">
+                     <div></div>
+                     <div></div>
+                 </div>
+                 <div id="second">
+                     <div></div>
+                     <div></div>
+                 </div>
+             </div>
+         </header>
+       </div>
+   
+   
+    {% endblock%}
+
+      <div class="home">
+        <div id="load-cover"  class="load-cover">
+          <canvas id="load-canvas" width="200" height="200"></canvas>
+         </div>
+      </div>
+   
+   
+    {% block contacts %}
+    
+    <div id="contacts" class="contacts-hide">
+    <div id="contacts-list">
+       {% for item in contacts %}
+       <div class="contact-item">
+          
+         <a href="{{item.contact_link}}"> 
+          <img class="contact-logo" src="data:;base64,{{item.contact_logo |safe }}"  alt="">
+          
+           <span>{{item.contact_title}}</span>
+         </a>
+       </div>
+       {% endfor %}
+    </div>
+<div class="footer">
+
+  <div>
+    <span>Created by:</span>
+    
+    <a href="https://www.linkedin.com/in/rashida-avshar-715673202?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BckSL7PUmQRKR3PVEp7zE3w%3D%3D" target="_blank">
+      
+      <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="#fff" class="mercado-match" width="24" height="24" focusable="false">
+        <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+      </svg> -->
+      <span>R.Avshar</span>
+      </a>
+    <span>&</span>
+    <a href="https://www.linkedin.com/in/savalan-qorxmaz-6b2a0218a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B10zV0El8R7m%2Bz7uI0JxrjQ%3D%3D" target="_blank">
+      <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="#fff" class="mercado-match" width="24" height="24" focusable="false">
+        <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+      </svg> -->
+      <span>S.Qorxmaz</span>
+      </a>
+  </div>
+  <span>  &copy; 2024</span>
+</div>
+   </div>
+     {% endblock%}
+
+
+
+   
+
+    {% block main %}
+    {% endblock %}
+    <p>I will display &#129032;</p>
+    <p>I will display &#x1F808;</p>
+    <p>I will display &#129092;</p>
+<p>I will display &#8801;</p>
+<p>I will display &#x2261;</p>
+<p>I will display &equiv;</p>
+<p>I will display &#10008;</p>
+<p>I will display &#x2718;</p>
+    {% block footer %}
+  
+    {% endblock %}
+    
+
+    
+ 
+ <script type="module" src="{% static 'scripts/main.js' %}"></script>
+</body>
+</html>

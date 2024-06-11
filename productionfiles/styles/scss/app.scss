@@ -1,0 +1,64 @@
+
+
+
+
+@import './header.scss';
+@import './home.scss';
+@import './carousel.scss';
+@import './contacts.scss';
+@import './projects.scss';
+
+
+@mixin responsive_container($screenwidth, $containerwidth){
+    @media screen and (min-width:$screenwidth) {
+        .container {
+            width: $containerwidth;
+            margin: auto;
+        }
+        
+    }
+}
+@include responsive_container(0px, 100% );
+@include responsive_container(772px, 80% );
+
+
+.hidden {
+    display: none;
+}
+.flex {
+    display: flex;
+}
+
+.block {
+    display: block;
+}
+
+.cover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+
+}
+.load-cover {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to right, rgb(34, 1, 1), rgb(204, 3, 3));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    #load-canvas {
+        // border: 1px solid black;
+        width: 200px;
+        height: 200px;
+    }
+
+}
+

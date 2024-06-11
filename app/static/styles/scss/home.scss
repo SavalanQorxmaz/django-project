@@ -1,0 +1,29 @@
+
+.home {
+
+    overflow: auto;
+    background: linear-gradient(to right, rgb(17, 17, 17), rgb(42, 42, 43));
+    color: white;
+    .container{
+
+        // border: 1px solid rgb(53, 3, 3);
+        padding: 0;
+        margin: auto;
+        .projects {
+
+            .project {
+                img {
+                    height: 300px;
+                    // max-width: 100%;
+                    object-fit: cover;
+                }
+                a {
+                    font-size: 3rem;
+                    color: rgb(12, 128, 236);
+                }
+            }
+        }
+
+    }
+
+}

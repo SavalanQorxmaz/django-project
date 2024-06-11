@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 import os
 from pathlib import Path
+import dj_database_url
 # settings.py
 # from dotenv import load_dotenv # type: ignore
 # load_dotenv()
@@ -85,10 +86,15 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 
 DATABASES = {
-  'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+#   'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+    'default': dj_database_url.config(
+        default= 'postgres://designdb_sz4x_user:tCnP54G08kWGVTEQn6tYv3mfiTtFC2X4@dpg-cpgl5n6ct0pc739qt9e0-a.oregon-postgres.render.com/designdb_sz4x',
+        conn_max_age=600,
+        conn_health_checks=True,
+    ),
 
    
 }
